@@ -1,7 +1,8 @@
+require("dotenv").config;
 const mongoose = require("mongoose");
 
 // Mongo connection
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect("mongodb://127.0.0.1.27017/mernAuth", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: true,
@@ -9,6 +10,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // mongoose connection object
 const db = mongoose.connection;
+console.log(db);
 
 // Set up an event listener that will fire when we connect
 // log to term. what host and port we are on
